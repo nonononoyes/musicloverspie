@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Redeem Your Keys
+    </title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <script src="{% static 'main.js' %}"></script>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="col-sm-8 mx-auto">
+            <br />
+            <h4>Claim your warranty</h4>
+
+            <div class="form-group">
+                <label for="key">Key:</label>
+                <input type="text" class="form-control" id="key" placeholder="SUP-XXXX-XXXX-XXXX-XXXX">
+            </div>
+
+
+            <div class="form-group">{% csrf_token %}
+                <button type="button" class="btn btn-primary btn-block" id="replaceKeyBtn">
+                    <span class="spinner-border spinner-border-sm" id="replaceBtnSpinner" hidden></span>
+
+                    Redeem
+                </button>
+            </div>
+
+            <div style="padding-top: 15px;" class="centerText" id="result_text_replace"></div>
+            <div id="result_link_replace" class="centerText"></div>
+            <div id="result_address_replace" class="centerText"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
