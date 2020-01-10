@@ -8,7 +8,6 @@ def index(request):
 def replace(request):
     key = request.POST.get('key','')
     print (key)
-
     content = replaceKey(key)
     print(content)
     return HttpResponse(content)
